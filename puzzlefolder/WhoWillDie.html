@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title> Treasure Hunt - Final Clue </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/stylesheet.css">
+        <style>
+            body {
+                text-align: center;
+            }
+            img {
+                margin: 20px auto;
+                display: block;
+            }
+            p {
+                font-size: 18px;
+                color: #333;
+            }
+        </style>
+	</head>
+	<body class="container">
+		<header class="Main-header">
+			<h1 style="text-align: center; background-color: rgba(25, 99, 71, 0.5); color: black">Treasure Hunt:</h1>
+            <h2 style="text-align: center; color: grey;">Final Clue</h2>
+            <hr>
+		</header>
+		<img src="images/final_clue.jpg" alt="Final Puzzle Image"> 
+        <p>Decode the final message from the image above!</p>
+        
+		<div class="form-group">
+  			<label for="usr">Answer:</label>
+  				<input type="text" class="form-control" id="myText" placeholder="Enter your answer">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-default" onclick="validateAnswer()">Submit</button>
+		</div>
+        <br>
+        <p id="responseMessage" style="color: red; font-weight: bold;"></p>
+        <!--When Submit button is clicked, Next button should work-->
+		<br>
+			<button type="button" onclick="window.location.href='/puzzlefolder/congratulations.html'" class="btn btn-success" id="Finish" disabled>Finish</button>
+
+		<script>
+			function validateAnswer() {
+				const answer = document.getElementById("myText").value.trim();
+				const correctAnswer = "TREASURE";
+
+				if (answer.toUpperCase() === correctAnswer) {
+					document.getElementById("Finish").disabled = false;
+					document.getElementById("responseMessage").style.color = "green";
+					document.getElementById("responseMessage").innerText = "Congratulations! You’ve solved the final clue.";
+				} else {
+					document.getElementById("responseMessage").style.color = "red";
+					document.getElementById("responseMessage").innerText = "Incorrect answer! Try again.";
+				}
+    		}
+		</script>
+   		<hr>
+	</body>
+</html>

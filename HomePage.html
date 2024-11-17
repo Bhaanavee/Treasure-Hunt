@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bengaluru Treasure Hunt</title>
+    
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" />
+    <style>
+      body {
+        background-color: rgba(25, 99, 71, 0.5);
+        margin: 30px 0;
+        font-family: 'Arial', sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        text-shadow: 2px 2px #ffffff;
+      }
+
+      p {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      img {
+        display: block;
+        margin: 20px auto;
+        border: 3px solid #333;
+        border-radius: 15px;
+      }
+
+      button {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .form-group {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #myText {
+        margin: 0 auto;
+        display: block;
+        font-size: 16px;
+      }
+
+      .footer {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <!-- Header Section -->
+    <header class="Main-header">
+      <hr />
+      <h1>Bengaluru Treasure Hunt</h1>
+      <hr />
+    </header>
+    
+    <!-- Welcome Section -->
+    <p>
+      Welcome to the Bengaluru Treasure Hunt Website! Your mission is to solve
+      a series of puzzles to discover the hidden treasure. Each completed puzzle
+      provides a key, which can be used to unlock new challenges from the home
+      page. Are you ready for the adventure?
+    </p>
+    
+    <!-- Treasure Map Image -->
+    <img
+      src="images/wriggle-treasure.jpg"
+      style="width: 600px; height: auto"
+      alt="Treasure Map"
+    />
+    
+    <!-- Start Button -->
+    <br />
+    <hr />
+    <br />
+    <button
+      type="button"
+      class="btn btn-success btn-lg active"
+      style="width: 100%"
+      id="Next"
+      onclick="window.location.href='/puzzlefolder/Box.html'"
+    >
+      Start the Adventure
+    </button>
+    
+    <!-- Puzzle Key Input -->
+    <div class="form-group">
+      <label for="usr" class="control-label">
+        Enter puzzle key here:
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="myText"
+        placeholder="Type your key"
+        style="width: 50%; margin: auto"
+      />
+    </div>
+    
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg active"
+        onclick="myFunction()"
+      >
+        Submit
+      </button>
+    </div>
+    
+    <!-- Script for Navigation -->
+    <script>
+      function myFunction() {
+        const key = document.getElementById("myText").value.trim();
+
+        switch (key) {
+          case "Now":
+            window.location.href = "/puzzlefolder/Patience.html";
+            break;
+          case "":
+            window.location.href = "/puzzlefolder/WhoWillDie.html";
+            break;
+          case "4":
+            window.location.href = "/Skeleton.html";
+            break;
+          case "FoundM3":
+            window.location.href = "/puzzlefolder/buttonclick.html";
+            break;
+          default:
+            alert("Invalid key! Please try again.");
+        }
+      }
+    </script>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2024 Bengaluru Treasure Hunt. All rights reserved.</p>
+    </div>
+  </body>
+</html>

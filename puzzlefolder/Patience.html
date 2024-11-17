@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title> Treasure Hunt - Clue 4 </title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/stylesheet.css">
+        <style>
+            p {
+                border-style: solid;
+            }
+        </style>
+	</head>
+	<body class="container">
+		<header class="Main-header">
+			<h1 style="text-align: center; background-color: rgba(25, 99, 71, 0.5); color: black">Treasure Hunt:</h1>
+            <h2 style="text-align: center; color: grey;">Solve the puzzle</h2>
+            <hr>
+		</header>
+        
+        <br>
+        <h3 style="text-align: center;">This is a waiting game! Patience will lead you to the next clue.</h3>
+        <br>
+        <p style="text-align: center;">Hint: Sometimes doing nothing is the best action!</p>
+        <br>
+        
+		<div class="form-group">
+  			<label for="usr">Answer:</label>
+  				<input type="text" class="form-control" id="myText" placeholder="Leave it blank">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-default" onclick="setTimeout(validateAnswer, 10000)">Submit</button>
+		</div>
+		<br>
+		<button type="button" class="btn btn-primary active" onclick="window.location.href='/puzzlefolder/FinalClue.html'" id="Next" disabled>Next Puzzle</button>
+
+		<script>
+			function validateAnswer() {
+				// Check if the input is left empty
+				if (document.getElementById("myText").value.trim() === "") {
+   				 	document.getElementById("Next").disabled = false;
+   				 	alert("Well done! Moving to the next clue.");
+				} else {
+					alert("Incorrect! Try leaving it blank.");
+				}
+    		}
+		</script>
+   		<hr>
+	</body>
+</html>
